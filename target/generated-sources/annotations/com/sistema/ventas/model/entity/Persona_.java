@@ -1,10 +1,12 @@
 package com.sistema.ventas.model.entity;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.metamodel.EntityType;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
 
 @StaticMetamodel(Persona.class)
+@Generated("org.hibernate.processor.HibernateProcessor")
 public abstract class Persona_ {
 
 	public static final String CEDULA = "cedula";
