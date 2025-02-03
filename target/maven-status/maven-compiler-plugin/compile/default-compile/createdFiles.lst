@@ -1,0 +1,9 @@
+com\sistema\ventas\repository\PersonaRepository.class
+com\sistema\ventas\model\entity\Persona$PersonaBuilder.class
+com\sistema\ventas\model\entity\Persona.class
+com\sistema\ventas\controller\PersonaController.class
+com\sistema\ventas\repository\persistence\CrudRepository.class
+com\sistema\ventas\service\impl\PersonaServiceImpl.class
+com\sistema\ventas\service\IUPersonaService.class
+com\sistema\ventas\model\entity\Persona_.class
+com\sistema\ventas\repository\persistence\Repository.class

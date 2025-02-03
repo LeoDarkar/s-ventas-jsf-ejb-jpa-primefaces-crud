@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="jakarta.faces.html"
+  xmlns:p="primefaces"
+  xmlns:f="jakarta.faces.core"
+>
+  <h:head>
+    <title>Mi Proyecto JSF 3</title>
+    <h:outputStylesheet
+      library="webjars"
+      name="primeflex/3.3.1/primeflex.min.css"
+    />
+    <h:outputStylesheet library="css" name="layout.css" />
+  </h:head>
+  <h:body>
+    <div class="layout-wrapper">
+      <div class="layout-content">
+        <div class="m-4">
+          <div class="flex justify-content-center flex-wrap">
+            <h1
+              class="flex align-items-center justify-content-center font-bold m-2"
+            >
+              CRUD CON JSF 4.0
+            </h1>
+          </div>
+
+          <div class="grid">
+            <div class="col-12">
+              <h:form id="form">
+                <p:growl id="messages" showDetail="true" />
+
+                <p:toolbar>
+                  <p:toolbarGroup>
+                    <p:commandButton
+                      value="Nuevo"
+                      icon="pi pi-plus"
+                      actionListener="#{personaMB.nuevo()}"
+                      update=":dialogs:panel-content"
+                      oncomplete="PF('dlgPersonaRegistro').show()"
+                      styleClass="ui-button-success"
+                      style="margin-right: 0.5rem"
+                    >
+                      <p:resetInput target=":dialogs:panel-content" />
+                    </p:commandButton>
+                  </p:toolbarGroup>
+                </p:toolbar>
+
+                <p:dataTable
+                  id="dt-persona"
+                  widgetVar="dtPersona"
+                  var="persona"
+                  value="#{personaMB.personas}"
+                  reflow="true"
+                  styleClass="persona-table"
+                  paginator="true"
+                  rows="10"
+                  selectionRowMode="add"
+                  paginatorPosition="bottom"
+                >
+                  <f:facet name="header">
+                    <div class="persona-table-header">
+                      <span style="font-weight: bold">Personas</span>
+                      <span class="filter-container ui-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <p:inputText
+                          id="globalFilter"
+                          onkeyup="PF('dtPersona').filter()"
+                          placeholder="Search"
+                        />
+                      </span>
+                    </div>
+                  </f:facet>
+
+                  <p:column
+                    headerText="Nombre"
+                    sortBy="#{persona.nombre}"
+                    filterBy="#{persona.nombre}"
+                  >
+                    <h:outputText value="#{persona.nombre}" />
+                  </p:column>
+                  <p:column
+                    headerText="Cédula"
+                    sortBy="#{persona.cedula}"
+                    filterBy="#{persona.cedula}"
+                  >
+                    <h:outputText value="#{persona.cedula}" />
+                  </p:column>
+                  <p:column
+                    headerText="Edad"
+                    sortBy="#{persona.edad}"
+                    filterBy="#{persona.edad}"
+                  >
+                    <h:outputText value="#{persona.edad}" />
+                  </p:column>
+                  <p:column
+                    headerText="Sexo"
+                    sortBy="#{persona.sexo}"
+                    filterBy="#{persona.sexo}"
+                  >
+                    <h:outputText value="#{persona.sexo}" />
+                  </p:column>
+
+                  <p:column ariaHeaderText="Acciones">
+                    <p:commandButton
+                      icon="pi pi-pencil"
+                      update=":dialogs:panel-content"
+                      oncomplete="PF('dlgPersonaRegistro').show()"
+                      styleClass="edit-button rounded-button ui-button-success"
+                      process="@this"
+                    >
+                      <f:setPropertyActionListener
+                        value="#{persona}"
+                        target="#{personaMB.persona}"
+                      />
+                      <p:resetInput target="dialogs:panel-content" />
+                    </p:commandButton>
+                  </p:column>
+                </p:dataTable>
+              </h:form>
+
+              <h:form id="dialogs">
+                <p:dialog
+                  header="Persona"
+                  showEffect="fade"
+                  modal="true"
+                  widgetVar="dlgPersonaRegistro"
+                  responsive="true"
+                >
+                  <p:outputPanel id="panel-content" class="ui-fluid">
+                    <p:outputPanel rendered="#{not empty personaMB.persona}">
+                      <div class="field">
+                        <p:outputLabel for="nombre">Nombre</p:outputLabel>
+                        <p:inputText
+                          id="nombre"
+                          value="#{personaMB.persona.nombre}"
+                          required="true"
+                        />
+                      </div>
+                      <div class="field">
+                        <p:outputLabel for="cedula">Cedula</p:outputLabel>
+                        <p:inputText
+                          id="cedula"
+                          value="#{personaMB.persona.cedula}"
+                          required="true"
+                        />
+                      </div>
+                      <div class="field">
+                        <p:outputLabel for="edad">Edad</p:outputLabel>
+                        <p:inputText
+                          id="edad"
+                          value="#{personaMB.persona.edad}"
+                          required="true"
+                        />
+                      </div>
+                      <div class="field">
+                        <p:outputLabel for="sexo">Sexo</p:outputLabel>
+                        <p:inputText
+                          id="sexo"
+                          value="#{personaMB.persona.sexo}"
+                          required="true"
+                        />
+                      </div>
+                    </p:outputPanel>
+                  </p:outputPanel>
+
+                  <f:facet name="footer">
+                    <p:commandButton
+                      value="Guardar"
+                      icon="pi pi-check"
+                      actionListener="#{personaMB.guardar()}"
+                      update="panel-content"
+                      process="panel-content @this"
+                    />
+                    <p:commandButton
+                      value="Cancelar"
+                      icon="pi pi-times"
+                      onclick="PF('dlgPersonaRegistro').hide()"
+                      class="ui-button-secondary"
+                      type="button"
+                    />
+                  </f:facet>
+                </p:dialog>
+              </h:form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </h:body>
+</html>
