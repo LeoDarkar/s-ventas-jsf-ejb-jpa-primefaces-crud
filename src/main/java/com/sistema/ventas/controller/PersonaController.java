@@ -58,4 +58,11 @@ public class PersonaController implements Serializable {
         return personas =personaService.listarPersonas();
     }
 
+    public void eliminar(){
+        personaService.eliminar(persona);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Persona eliminada"));
+        PrimeFaces.current().executeScript("PF('dlgEliminarPersona').hide()");
+        PrimeFaces.current().ajax().update("form:messages", "form:dt-persona");
+    }
+
 }
