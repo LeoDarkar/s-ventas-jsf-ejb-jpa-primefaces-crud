@@ -98,6 +98,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- ApiRest-->
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -112,11 +119,11 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>3.0.0.Final</version>
                 <configuration>
-                <hostname>localhost</hostname>
-                <port>9990</port> <!-- Puerto de administración de WildFly -->
-                <username>admin</username> <!-- Usuario de administración de WildFly -->
-                <password>admin</password> <!-- Contraseña de administración de WildFly -->
-            </configuration>
+                    <hostname>localhost</hostname>
+                    <port>9990</port> <!-- Puerto de administración de WildFly -->
+                    <username>admin</username> <!-- Usuario de administración de WildFly -->
+                    <password>admin</password> <!-- Contraseña de administración de WildFly -->
+                </configuration>
             </plugin>
         </plugins>
     </build>

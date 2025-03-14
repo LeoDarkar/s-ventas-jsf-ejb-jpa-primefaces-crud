@@ -1,7 +1,7 @@
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\controller\PersonaController.java
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\model\entity\Persona.java
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\repository\persistence\CrudRepository.java
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\repository\persistence\Repository.java
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\repository\PersonaRepository.java
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\service\impl\PersonaServiceImpl.java
-C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\src\main\java\com\sistema\ventas\service\IUPersonaService.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\controller\PersonaController.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\model\entity\Persona.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\repository\persistence\CrudRepository.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\repository\persistence\Repository.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\repository\PersonaRepository.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\service\impl\PersonaServiceImpl.java
+C:\Users\leyun\Documents\GitHub\s-ventas-jsf-ejb-jpa-primefaces-crud\backend-s-ventas\src\main\java\com\sistema\ventas\service\IUPersonaService.java
